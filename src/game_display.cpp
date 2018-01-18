@@ -22,11 +22,11 @@ Display::Display(
 	Hand pile = deal_all(deck);
 	for (const Card& card : pile) {
 		sf::Texture t;
-		t.loadFromFile("resources/card_textures/" + to_string(card, deck) + ".jpg");
+		t.loadFromFile("../share/card_textures/" + to_string(card, deck) + ".jpg");
 		card_textures[card] = t;
 	}
 	sf::Texture t;
-	t.loadFromFile("resources/card_textures/back.jpg");
+	t.loadFromFile("../share/card_textures/back.jpg");
 	card_textures[Card()] = t;
 
 	resize();
