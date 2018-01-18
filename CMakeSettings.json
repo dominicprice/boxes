@@ -10,7 +10,13 @@
       "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
       "cmakeCommandArgs": "",
       "buildCommandArgs": "-v",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "variables": [
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "C:\\Users\\domin\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+        }
+      ]
     },
     {
       "name": "x86-Release",
@@ -21,7 +27,13 @@
       "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
       "cmakeCommandArgs": "",
       "buildCommandArgs": "-v",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "variables": [
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "C:\\Users\\domin\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+        }
+      ]
     },
     {
       "name": "x64-Debug",
@@ -50,7 +62,13 @@
       "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
       "cmakeCommandArgs": "",
       "buildCommandArgs": "-v",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "variables": [
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "C:\\Users\\domin\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+        }
+      ]
     },
     {
       "name": "Linux-Debug",

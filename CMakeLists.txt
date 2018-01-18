@@ -51,7 +51,9 @@ add_executable(boxes
 )
 target_include_directories(boxes PUBLIC
   "src"
-  "libs/cards/include")
+  "libs/cards/include"
+  ${SFML_INCLUDE_DIR}
+)
 target_link_libraries(boxes 
   ${SFML_LIBRARIES} 
 )

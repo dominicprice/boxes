@@ -137,6 +137,17 @@
 ////////////////////////////////////////////////////////////
 #define DOM_CREATE_VALUE( ... ) DOM_EXPAND_( DOM_CREATE_VALUE_EVAL(DOM_EXPAND_( DOM_PP_NARG_(__VA_ARGS__) ))(__VA_ARGS__) )
 
+#define DOM_CREATE_DECK_TYPES(name, suits, values, comparison)						\
+namespace name																		\
+{																					\
+	using suit_t = suits;															\
+	using value_t = values;															\
+	using Deck = dom::Deck_t<suits, values>;										\
+	using PlayingCard = dom::PlayingCard_t<Deck>;									\
+	using Hand = dom::Hand_t<Deck, comparison<Deck>>;								\
+	PlayingCard operator"" _pc(const char* name) { return PlayingCard(name); }		\
+}																					// End of macro
+
 namespace dom
 {
 	////////////////////////////////////////////////////////////
@@ -366,7 +377,7 @@ namespace dom
 	class DefaultShuffler
 	{
 	public:
-		DefaultShuffler() : gen(std::chrono::system_clock::now().time_since_epoch().count()) {}
+		DefaultShuffler() : gen(static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count())) {}
 		template <typename It>
 		void operator() (It begin, It end) const
 		{
@@ -588,7 +599,7 @@ namespace dom
 		using value_t = decks::Values_French_Low::value_t;
 		using Deck = Deck_t<decks::Suits_French, decks::Values_French_Low>;
 		using PlayingCard = PlayingCard_t<Deck>;
-		using hand = Hand_t<Deck, sort_by_value<Deck>>;
+		using Hand = Hand_t<Deck, sort_by_value<Deck>>;
 		PlayingCard operator"" _pc(const char* name) { return PlayingCard(name); }
 	}
 
