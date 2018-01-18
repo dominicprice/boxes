@@ -22,11 +22,11 @@ Display::Display(
 	Hand pile = deal_all(deck);
 	for (const Card& card : pile) {
 		sf::Texture t;
-		t.loadFromFile("card_textures/" + to_string(card, deck) + ".jpg");
+		t.loadFromFile("resources/card_textures/" + to_string(card, deck) + ".jpg");
 		card_textures[card] = t;
 	}
 	sf::Texture t;
-	t.loadFromFile("card_textures/back.jpg");
+	t.loadFromFile("resources/card_textures/back.jpg");
 	card_textures[Card()] = t;
 
 	resize();
@@ -98,7 +98,7 @@ void Display::run()
 		"Boxes",
 		style);
 	sf::Image icon;
-	icon.loadFromFile("icon.jpg");
+	icon.loadFromFile("resources/icon.jpg");
 	if (icon.getSize().x != 0)
 		window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 	window_ptr = &window;
