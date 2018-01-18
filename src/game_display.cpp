@@ -11,7 +11,7 @@ Display::Display() :
 
 Display::Display(
 	unsigned int width, unsigned int height)
-	: width(width), height(height), win_thread(std::thread(&Display::run, this)),
+	: width(width), height(height), win_thread(&Display::run, this),
 	piles_ptr(nullptr), accept_input(false), input(playing_cards::Card()),
 	is_paused(false), window_ptr(nullptr)
 {
